@@ -17,7 +17,7 @@ class BookList extends React.Component {
       let filteredBooks = horror.filter((book) =>
         book.title.toLowerCase().includes(searchQuery.toLowerCase())
       );
-      this.setState({ books: filteredBooks });
+      this.setState({ filteredBooks });
       console.log(filteredBooks);
     } else {
       this.setState({ books: this.props.horror });
@@ -45,7 +45,9 @@ class BookList extends React.Component {
         <h1 className="text-center">List Of Books</h1>
         <Row>
           <h2>HORROR</h2>
-          <SingleBook genre={horror} />
+          {/* {this.props.genre.map((book) => ( */}
+          <SingleBook genre={this.state.filteredBooks || horror} />
+          {/* ))} */}
           {/* <h2>SCIFI</h2> */}
           {/* <SingleBook genre={scifi} />
           <h2>ROMANCE</h2>
