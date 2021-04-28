@@ -1,6 +1,7 @@
 import React from "react";
 import { Row, Card, Col } from "react-bootstrap";
 import "../assets/css/card.css";
+import MyBadge from "./MyBadge";
 
 class SingleBook extends React.Component {
   state = {
@@ -14,10 +15,10 @@ class SingleBook extends React.Component {
   render() {
     return (
       <Row>
-        {this.props.genre.slice(0, 10).map((book) => (
+        {this.props.genre.map((book) => (
           <Col>
             <Card
-              key={book.asin}
+              // key={book.asin}
               onClick={() => this.setState({ selectedBook: book })}
               className="h-100 w-100"
               style={{ minWidth: "250px" }}
@@ -26,6 +27,7 @@ class SingleBook extends React.Component {
               <Card.Body>
                 <h3>{book.title}</h3>
                 <p>{book.asin}</p>
+                <MyBadge category={this.props.category} />
                 <h4>{book.price}</h4>
                 <h4>{book.catagory}</h4>
               </Card.Body>
