@@ -16,25 +16,22 @@ class SingleBook extends React.Component {
     return (
       <Row>
         {this.props.genre.map((book) => (
-          <Col>
+          <Col xs={1} md={3} lg={2} className="mb-2 text-center">
             <Card
               // key={book.asin}
               onClick={() => this.setState({ selectedBook: book })}
               className="h-100 w-100"
-              style={{ minWidth: "250px" }}
             >
               <img className="d-block w-100" src={book.img} alt="First-Book" />
-              <Card.Body>
-                <h3>{book.title}</h3>
-                <p>{book.asin}</p>
+              <Card.Body className="p-1">
+                <h6>{book.title}</h6>
+                <span className="p-0 fs-6 fw-light">{book.asin}</span>
                 <MyBadge category={this.props.category} />
-                <h4>{book.price}</h4>
-                <h4>{book.catagory}</h4>
+                <p style={{ color: "red" }}> $ {book.price}</p>
               </Card.Body>
             </Card>
           </Col>
         ))}
-        ;
       </Row>
     );
   }
