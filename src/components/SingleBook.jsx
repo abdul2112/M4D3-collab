@@ -27,9 +27,9 @@ class SingleBook extends React.Component {
               <Card.Body>
                 <h3>{book.title}</h3>
                 <p>{book.asin}</p>
+                <MyBadge category={this.props.category} />
                 <h4>{book.price}</h4>
                 <h4>{book.catagory}</h4>
-                <MyBadge />
               </Card.Body>
             </Card>
           </Col>

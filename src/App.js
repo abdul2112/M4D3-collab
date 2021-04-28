@@ -6,7 +6,6 @@ import BookList from "./components/BookList.jsx";
 import MyNavbar from "./components/Nav.jsx";
 import MyFooter from "./components/Footer";
 import MyJumbotron from "./components/Jumbotron.jsx";
-import FilterBookList from "./components/FilterBookList.jsx";
 
 const App = () => {
   return (
@@ -15,7 +14,6 @@ const App = () => {
       <MyJumbotron />
       {/* <FilterBookList /> */}
       <BookList />
-
       <MyFooter />
     </div>
   );
