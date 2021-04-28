@@ -1,3 +1,4 @@
+import React from "react";
 import "../assets/css/footer.css";
 import Insta from "../assets/img/insta.png";
 import Github from "../assets/img/github.png";
