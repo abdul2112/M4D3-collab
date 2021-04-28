@@ -1,3 +1,4 @@
+
 import { Component } from "react";
 import { Alert, Container } from "react-bootstrap";
 
@@ -24,3 +25,6 @@ class MyAlert extends Component {
 }
 
 export default MyAlert;
+
+import React from "react";
+
