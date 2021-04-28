@@ -21,13 +21,17 @@ class SingleBook extends React.Component {
               // key={book.asin}
               onClick={() => this.setState({ selectedBook: book })}
               className="h-100 w-100"
+              onClick={this.selectBook}
             >
               <img className="d-block w-100" src={book.img} alt="First-Book" />
               <Card.Body className="p-1">
                 <h6>{book.title}</h6>
                 <span className="p-0 fs-6 fw-light">{book.asin}</span>
                 <MyBadge category={this.props.category} />
-                <p style={{ color: "red" }}> $ {book.price}</p>
+                <p className="align-self-end" style={{ color: "red" }}>
+                  {" "}
+                  $ {book.price}
+                </p>
               </Card.Body>
             </Card>
           </Col>
