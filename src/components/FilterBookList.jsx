@@ -2,33 +2,33 @@ import React from "react";
 
 import SingleBook from "./SingleBook";
 
-import fantasy from "../json/fantasy.json";
-import history from "../json/history.json";
+// import fantasy from "../json/fantasy.json";
+// import history from "../json/history.json";
 import horror from "../json/horror.json";
-import romance from "../json/romance.json";
-import scifi from "../json/scifi.json";
+// import romance from "../json/romance.json";
+// import scifi from "../json/scifi.json";
 
 // import SingleBook from "./SingleBook.jsx"
 
 import { Row, InputGroup, FormControl } from "react-bootstrap";
 
-let categories = [fantasy, horror, history, romance, scifi];
+// let categories = [fantasy, horror, history, romance, scifi];
 
 class SearchBook extends React.Component {
   state = {
-    books: categories,
+    books: horror,
   };
 
   handleSearchQuery = (searchQuery) => {
     if (searchQuery) {
       console.log(searchQuery);
-      let filteredBooks = categories.filter((book) =>
+      let filteredBooks = horror.filter((book) =>
         book.title.toLowerCase().includes(searchQuery.toLowerCase())
       );
       this.setState({ books: filteredBooks.slice(0, 12) });
       console.log(filteredBooks);
     } else {
-      this.setState({ books: fantasy.slice(0, 12) });
+      this.setState({ books: horror.slice(0, 12) });
     }
   };
   render() {
@@ -47,15 +47,7 @@ class SearchBook extends React.Component {
         <Row className="mt-4">
           {this.state.books ? (
             this.state.books.map((book) => {
-              return (
-                <SingleBook
-                  title={book.title}
-                  image={book.img}
-                  key={book.asin}
-                  category={book.category}
-                  price={book.price}
-                />
-              );
+              return <SingleBook />;
             })
           ) : (
             <div> Nothing here </div>
